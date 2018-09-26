@@ -39,5 +39,5 @@ int main(void)
         n = n - cent;
     }
 
-    printf("%i\n", numberOfCoins);
+    printf("I will give you %i coins as change.\n", numberOfCoins);
 }
