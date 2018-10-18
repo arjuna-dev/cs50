@@ -1,10 +1,7 @@
 #include<cs50.h>
 #include<stdio.h>
 
-int square(int n)
-{
-    return n * n;
-}
+int square(int n);
 
 int main (void)
 {
@@ -12,3 +9,7 @@ int main (void)
     printf("%i\n", square(n));
 }
 
+int square(int n)
+{
+    return n * n;
+}

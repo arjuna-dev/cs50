@@ -13,12 +13,12 @@ int main(void)
     {
         n = get_int("How tall should your stairs be? ");
     }
-    while (n>24 || n<0);
+    while (n>24 || n<0 || n==0);
 
     int spaces = n-2;
     int hashes = 2;
 
-    //Loop for levels
+    // Loop for levels
     for (int i=0; i<n; i++)
     {
         //Loop for spaces
