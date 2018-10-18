@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
+int encrypt(aChar, aALeterValue, n){
+    aChar = aChar - aALeterValue + n;
+    aChar = aChar%26;
+    aChar = aChar+aALeterValue;
+    return aChar;
+}
 
 int main(int argc, string argv[])
 {
@@ -15,17 +21,12 @@ int main(int argc, string argv[])
         //Iterate through the characters of the string.
         for(int i=0, strl=strlen(s); i<strl; i++){
             //Check if letter is capitalized (substract 65)
-            if (s[i]<91){
-                s[i] = s[i] - 65 + n;
-                s[i] = s[i]%26;
-                s[i] = s[i]+65;
+            if (s[i]<91&&s[i]>64){
+                printf("%c", encrypt(s[i],65,n));
             //Check if letter is capitalized (substract 97)
-            } else if (s[i]>96){
-                s[i] = s[i] - 97 + n;
-                s[i] = s[i]%26;
-                s[i] = s[i]+97;
+            } else if (s[i]>96&&s[i]<123){
+                printf("%c", encrypt(s[i],97,n));
             }
-            printf("%c", s[i]);
         }
             printf("\n");
     } else {
