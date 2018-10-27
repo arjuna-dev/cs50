@@ -20,7 +20,7 @@ int denormalizeChar(aChar){
     }
     return aChar;
 }
-
+//remember if lower or upper
 int encrypt(aChar,numToAdd){
     char newChar;
     newChar=normalizeChar0to26(aChar);
@@ -30,7 +30,6 @@ int encrypt(aChar,numToAdd){
     printf("%c", newChar);
     return newChar;
 }
-
 
 
 int main(int argc, string argv[])
@@ -49,7 +48,7 @@ int main(int argc, string argv[])
         string s = get_string("plaintext:");
         string key = argv[1];
         printf("ciphertext:");
-        int keyChar;
+        char keyChar;
 
         //Iterate through the characters of the string.
         for(int i=0, strl=strlen(s); i<strl; i++){
@@ -57,7 +56,7 @@ int main(int argc, string argv[])
 
             // int numToAdd = normalizeChar0to26(key[j]);
             // encrypt(s[i],numToAdd);
-            //printf("%c", encrypt(s[i],numToAdd))
+            // printf("%c", encrypt(s[i],numToAdd));
 
 
 
@@ -72,17 +71,20 @@ int main(int argc, string argv[])
                 s[i]=s[i]+keyChar;
                 s[i]=s[i]%26;
                 s[i]=s[i]+65;
-                printf("%c", s[i]);
             } else if (islower(s[i])){
                 s[i]=s[i]-97;
                 s[i]= s[i]+keyChar;
                 s[i]=s[i]%26;
                 s[i]=s[i]+97;
-                printf("%c", s[i]);
             }
+                printf("%c", s[i]);
+
+
         }
             printf("\n");
         return 0;
+
+
     } else {
         printf("Smthn went wrong... Please exactly only one alphabetical argument after writing ./vinagere. Thanks.\n");
         return 1;
