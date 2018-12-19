@@ -44,9 +44,10 @@ int frequency(string note)
     if (octave>=4){
         freq = 440*(pow(2.00,octave-4.00));
         freq = round(freq);
+        printf("The frequency as an integer for the given octave is %i\n",(int) freq);
     } else if (octave<4){
         freq = 440/(pow(2.00,4.00-octave));
-        printf("2.the frequency as an int for the given octave is %i\n",(int) freq);
+        printf("The frequency as an integer for the given octave is %i\n",(int) freq);
     }
 
     //Find 'n' which is the number of semitones separating the given note from A
